@@ -8,6 +8,7 @@ ADD student.conf /etc/nginx/sites-available/
 RUN ln -s /etc/nginx/sites-available/student.conf /etc/nginx/sites-enabled/student
 RUN rm /etc/nginx/sites-enabled/default
 
+#Tell where phpfpm is
 RUN echo "upstream php-upstream { server phpfpm:9000; }" > /etc/nginx/conf.d/upstream.conf
 RUN usermod -u 1000 www-data
 CMD ["nginx"]
