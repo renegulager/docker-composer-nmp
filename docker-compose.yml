@@ -11,7 +11,7 @@ services:
       MYSQL_PASSWORD: student_p
 
   phpfpm:
-    image: php:fpm
+    build: ./phpfpm
     ports:
       - "9000:9000"
     volumes:
